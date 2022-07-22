@@ -41,11 +41,26 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
 
     if (state == "win") {
+        playerWins = playerWins + 1;
         return `You win!  ${playerSelection} beats ${computerSelection}.`;
     } else if (state == "lose") {
+        computerWins = computerWins + 1;
         return `You lose! ${computerSelection} beats  ${playerSelection}.`;
     }else {
         return "You tie!";
     }
 
+}
+
+
+const playerWins = 0;
+const computerWins = 0;
+
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("Rock, Paper, or Scissors?");
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+     }
 }
