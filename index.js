@@ -49,13 +49,10 @@ function playRound(playerSelection, computerSelection) {
     }else {
         return "You tie!";
     }
-
 }
-
 
 const playerWins = 0;
 const computerWins = 0;
-
 
 function game() {
     for (let i = 0; i < 5; i++) {
