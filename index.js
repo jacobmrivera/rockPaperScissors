@@ -1,3 +1,6 @@
+let playerWins = 0;
+let computerWins = 0;
+
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * 3) + 1;
     console.log(computerChoice);
@@ -51,13 +54,40 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerWins = 0;
-const computerWins = 0;
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Rock, Paper, or Scissors?");
+
+function game(e) {
+    // for (let i = 0; i < 5; i++) {
+        // playerSelection = prompt("Rock, Paper, or Scissors?");
+        playerSelection = e.target.id;
+        console.log("playerSelection");
         const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-     }
+        let output = playRound(playerSelection, computerSelection);
+        // console.log(playRound(playerSelection, computerSelection));
+        alert(output);
+    //  }
+
 }
+
+// const btn = document.querySelector('#btn');
+// btn.addEventListener('click', console.log("sus"));
+
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', game);
+});
+
+// const btnRock = document.querySelector('#rock');
+
+// btnRock.addEventListener('click',() => {
+//     alert("Hello");
+// });
+
+// const keys = Array.from(document.querySelectorAll('.move'));
+// keys.forEach(key => key.addEventListener('click', game));
+// window.addEventListener()
+
