@@ -3,18 +3,58 @@
   <head>
     <meta charset = "UTF-8">
     <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>
-      My first website
+      Rock, Paper, Scissors!
     </title>
   </head>
 
   <body>
+    <div class = "titleDiv"> 
+      <h1>Let's play Rock, Paper, Scissors!</h1>
 
-    <button class=".move" id="rock">ROCK</button>
-    <button class=".move" id="paper" >PAPER</button>
-    <button class=".move" id="scissors" >SCISSORS</button>
+    </div>
 
+    <div class="gameButtons">
 
+      <div class="buttonGroup">
+        <button class=".move" id="rock"><img src="images/rock.jpeg" /></button>
+        ROCK
+      </div>
 
+      <div class="buttonGroup">
+        <button class=".move" id="paper"><img src="images/paper.jpeg" /></button>
+        PAPER
+      </div>
+
+      <div class="buttonGroup">
+        <button class=".move" id="scissors"> <img src="images/scissors.jpeg" /></button>
+        SCISSORS
+      </div>
+    </div>
+
+    <div id="results">
+      <div id="scores">
+
+        <div class="player">
+          <h3> Player</h3>
+          <h3 id="scorePlayer"> 0 </h3>
+        </div>
+
+        <h3>
+          vs
+        </h3>
+
+        <div class="player">
+          <h3> Computer</h3>
+          <h3 id="scoreComputer"> 0 </h3>
+        </div>
+
+      </div>
+
+        <div id="finalMessage">
+
+        </div>
+     </div>
   </body>
 </html>

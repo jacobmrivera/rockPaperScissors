@@ -1,0 +1,85 @@
+body {
+    background-color: lightslategrey;
+}
+
+.titleDiv {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    font-weight: bolder;
+    font-size:xx-large;
+
+    color: whitesmoke;
+}
+
+.gameButtons {
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 100px;
+
+}
+
+.buttonGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.move {
+    padding-top: 0px;
+}
+
+button {
+    padding:0;
+    border-width: 20px;
+    border-radius: 40px;
+    border-color: midnightblue;
+    background-color: rgba(201, 76, 76, 0.0);
+    /* opacity: 0.0; */
+
+    
+}
+
+img {
+    /* background-size: 100% 100%; */
+
+    width:  12vw;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    /* border-width: 8px; */
+    border-radius: 20px;
+        /* border-color: midnightblue; */
+
+    
+}
+
+
+#scores {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size:xx-large;
+
+    color: whitesmoke;
+    gap: 25px;
+
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#finalMessage {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size:xx-large;
+
+    color: whitesmoke;
+    gap: 25px;
+}

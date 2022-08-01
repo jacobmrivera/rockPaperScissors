@@ -1,9 +1,14 @@
+
+const scorePlayer = document.querySelector('#scorePlayer');
+const scoreComputer = document.querySelector('#scoreComputer');
+const finalMessage = document.querySelector('#finalMessage')
+
 let playerWins = 0;
 let computerWins = 0;
 
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * 3) + 1;
-    console.log(computerChoice);
+    // console.log(computerChoice );
     if (computerChoice == 1) {
         return "Rock";
     } else if (computerChoice == 2) {
@@ -20,6 +25,8 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
 
     let state = "tie";
+
+    console.log(playerSelection);
 
     if (playerSelection == "rock") {
         if (computerSelection == "Paper") {
@@ -45,49 +52,36 @@ function playRound(playerSelection, computerSelection) {
 
     if (state == "win") {
         playerWins = playerWins + 1;
+        scorePlayer.textContent = playerWins;
         return `You win!  ${playerSelection} beats ${computerSelection}.`;
     } else if (state == "lose") {
         computerWins = computerWins + 1;
+        scoreComputer.textContent = computerWins;
         return `You lose! ${computerSelection} beats  ${playerSelection}.`;
     }else {
+        finalMessage.textContent = "Tie"
         return "You tie!";
     }
 }
 
-
-
 function game(e) {
-    // for (let i = 0; i < 5; i++) {
-        // playerSelection = prompt("Rock, Paper, or Scissors?");
-        playerSelection = e.target.id;
-        console.log("playerSelection");
-        const computerSelection = getComputerChoice();
-        let output = playRound(playerSelection, computerSelection);
-        // console.log(playRound(playerSelection, computerSelection));
-        alert(output);
-    //  }
+    // console.log("got to game()");
+    playerSelection = e.target.parentElement.id;
+    // console.log(e.target.id);
+    const computerSelection = getComputerChoice();
+
+    if( playerWins + computerWins < 5 ) {
+     playRound(playerSelection, computerSelection);
+    }else {
+        finalMessage.textContent = playerWins > computerWins ? 'You win! Congrats!' : 'yikes, you lose...';
+    }
 
 }
-
-// const btn = document.querySelector('#btn');
-// btn.addEventListener('click', console.log("sus"));
 
 const buttons = document.querySelectorAll('button');
 
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
-
   // and for each one we add a 'click' listener
   button.addEventListener('click', game);
 });
-
-// const btnRock = document.querySelector('#rock');
-
-// btnRock.addEventListener('click',() => {
-//     alert("Hello");
-// });
-
-// const keys = Array.from(document.querySelectorAll('.move'));
-// keys.forEach(key => key.addEventListener('click', game));
-// window.addEventListener()
-
